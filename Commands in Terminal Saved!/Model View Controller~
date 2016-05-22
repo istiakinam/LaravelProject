@@ -1,0 +1,8 @@
+routes.php
+	Routes::get('articles', 'ArticlesController@index');
+
+learning-laravel-5: php artisan make:controller ArticlesController
+
+edit-->> app/Http/Controllers/ArticlesController.php
+
+	resources/views/articles/index.blade.php  //to view
