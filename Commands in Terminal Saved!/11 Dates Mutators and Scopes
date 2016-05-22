@@ -1,0 +1,2 @@
+sqlite3 storage/database.sqlite
+select * from articles;
