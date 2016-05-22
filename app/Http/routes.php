@@ -11,15 +11,16 @@
 |
 */
 
-Route::get('about', 'PagesController@about');  
-Route::get('contact', 'PagesController@contact');
+//Route::get('about', 'PagesController@about');  
+//Route::get('contact', 'PagesController@contact');
+//
+//Route::get('articles', 'ArticlesController@index');
+//Route::get('articles/create', 'ArticlesController@create');
+//Route::get('articles/{id}', 'ArticlesController@show'); 
+// {id}(wildcard) can be anything. eg: foo. Should be at the last line
+//Route::post('articles', 'ArticlesController@store');
 
-Route::get('articles', 'ArticlesController@index');
-Route::get('articles/create', 'ArticlesController@create');
-Route::get('articles/{id}', 'ArticlesController@show'); 
- //{id}(wildcard) can be anything. eg: foo. Should be at the last line
-Route::post('articles', 'ArticlesController@store');
-
+Route::resource('articles', 'ArticlesController');
 
 //Route::get('foo', function()
 //           {

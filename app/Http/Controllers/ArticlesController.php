@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Http\Requests;
-use App\Http\Requests\CreateArticleRequest;
+use App\Http\Requests\ArticleRequest;
 use App\Article;   //imported
 use Carbon\Carbon;
+
 
 class ArticlesController extends Controller
 {
@@ -39,13 +40,28 @@ class ArticlesController extends Controller
         return view('articles.create');
     }
     
-    public function store(CreateArticleRequest $request)
+    public function store(ArticleRequest $request)
     {
         //$input['published_at'] = Carbon::now();
         
         //$article = new Article;
         //$article->title = $input['title'];
         Article::create($request->all());
+        
+        return redirect('articles');
+    }
+    
+    public function edit($id)
+    {
+        $article = Article::findOrFail($id);
+        return view('articles.edit', compact('article'));
+    }
+    
+    public function update($id, ArticleRequest $request)
+    {
+        $article = Article::findOrFail($id);
+        
+        $article->update($request->all());
         
         return redirect('articles');
     }
