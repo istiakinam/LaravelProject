@@ -1,1 +1,0 @@
-php artisan make:request CreateArticleRequest --> app/Http/Requests/CreateArticleRequest     ****for validation. user make requests to 				     my application

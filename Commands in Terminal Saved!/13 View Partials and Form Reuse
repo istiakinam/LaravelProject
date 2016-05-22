@@ -1,8 +1,0 @@
-php artisan route:list
-
-
-Partials: creating partials,
-	reuse forms, 
-	passing variables that view needs 
-	general form request class: ArticleRequest
-	Route::resource
